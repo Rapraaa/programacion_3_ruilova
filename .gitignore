@@ -1,0 +1,63 @@
+# --- Dependencias ---
+# Ignora node_modules en cualquier carpeta del proyecto
+node_modules/
+jspm_packages/
+
+# --- Compilación y Salida ---
+# NestJS (dist), React (build/dist), y otros bundles
+dist/
+build/
+out/
+.next/
+.cache/
+*.tsbuildinfo
+
+# --- Logs ---
+# Registros de errores y depuración
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Variables de Entorno (CRÍTICO) ---
+# No subir credenciales ni secretos
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# --- Pruebas (Testing) ---
+# Cobertura de tests
+coverage/
+.nyc_output/
+
+# --- IDEs y Editores ---
+# Configuraciones de VS Code, IntelliJ, etc.
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Archivos del Sistema ---
+# Archivos basura de macOS y Windows
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Otros archivos de herramientas ---
+.npm
+.eslintcache
+.stylelintcache
+.parcel-cache
+.turbo/
