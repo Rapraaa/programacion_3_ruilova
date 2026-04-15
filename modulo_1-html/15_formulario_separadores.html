@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Formulario con separadores</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="" />
+    </head>
+    <body>
+        <h1>Formulario con separadores</h1>
+        <form action="/procesar" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" />
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" />
+            </fieldset>
+            <fieldset>
+                <legend>Datos de acceso</legend>
+                <label for="email">Correo electronico</label>
+                <input type="email" id="email" name="email" />
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" />
+            </fieldset>
+        </form>
+    </body>
+</html>
