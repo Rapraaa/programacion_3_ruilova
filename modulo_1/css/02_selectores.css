@@ -1,0 +1,70 @@
+h3 {
+    color: chocolate;
+    font-size: 6ram;
+}
+
+.palabra_moraita {
+    color: mediumpurple;
+    font-size: 3ram;
+}
+
+.product_card {
+    border: 2px solid darkslategray;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: cyan;
+    border-radius: 8px;
+}
+
+.product_name {
+    font-weight: bold;
+}
+
+.product_price {
+    font-weight: bold;
+    color: green;
+}
+
+#id_selector {
+    color: darkkhaki;
+    font-weight: bold;
+}
+
+* {
+    color: maroon;
+    font-weight: bold;
+    padding: 5px;
+    border: 4px transparent red;
+}
+
+.combined_selector > li {
+    color: blue;
+}
+
+.navbar a {
+    color: saddlebrown;
+    text-decoration: wheat;
+}
+
+h4,
+h5,
+h6 {
+    color: lightskyblue;
+    font-family: "Times New Roman", Times, serif;
+}
+
+button.btn-primary {
+    background-color: rebeccapurple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+button.btn-error {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
