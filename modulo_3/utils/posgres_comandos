@@ -1,0 +1,4 @@
+CREATE USER blog_user WITH PASSWORD 'blog_user_pass';
+CREATE DATABASE blogdb2;
+GRANT ALL PRIVILEGES ON DATABASE blogdb2 TO blog_user;
+ALTER DATABASE blogdb2 OWNER TO blog_user;
