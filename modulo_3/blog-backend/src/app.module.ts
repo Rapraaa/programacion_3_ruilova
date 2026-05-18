@@ -20,6 +20,7 @@ import { PostsModule } from './posts/posts.module';
       database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      ssl: { rejectUnauthorized: false },
     }),
     AuthModule,
     UsersModule,

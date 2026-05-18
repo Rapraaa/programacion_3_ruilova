@@ -1,24 +1,47 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { AppService } from './app.service';
-import { ProductDto } from './product.dto';
+import { ProductDTO } from './product_dto';
+
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('/health')
+  @Get("/health")
   getHealth(): any {
     return this.appService.getHealth();
   }
-  @Post('/products')
-  createProduct(@Body() product: ProductDto): ProductDto {
-    return this.appService.createProduct(product);
+
+  @Post("/products")
+  createProducto(@Body() product: ProductDTO): ProductDTO {
+    return this.appService.createProducto(product);
   }
-  @Get('/products')
-  findAll(): ProductDto[] {
+
+  @Get("/products")
+  findAll(): ProductDTO[] {
     return this.appService.findAll();
   }
-  @Get('/products/:id')
-  findById(@Param('id') id: string): ProductDto {
-    return this.appService.findById(id);
+
+  @Get("/products/:id")
+  findbyid(@Param('id') id: string): ProductDTO { 
+    return this.appService.findbyid(id);
   }
+
+  @Put("/products/:id")
+  update(
+    @Param('id') id: string, 
+    @Body() updatedProductDto: Partial<ProductDTO> 
+  ): ProductDTO { 
+    return this.appService.update(id, updatedProductDto);
+  }
+
+  @Delete("/products/:id")
+  deleteById(@Param('id') id: string): ProductDTO { 
+    return this.appService.deleteById(id);
+  }
+
+  @Post("/area-triangulo")
+  areaTriangulo(@Body() data:any): any { 
+    return this.appService.areaTriangulo(data);
+  }
+
 }
