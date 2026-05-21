@@ -1,47 +1,22 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  UseGuards,
+} from '@nestjs/common';
 import { AppService } from './app.service';
-import { ProductDTO } from './product_dto';
+import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get("/health")
+  @Get('/health')
   getHealth(): any {
     return this.appService.getHealth();
   }
-
-  @Post("/products")
-  createProducto(@Body() product: ProductDTO): ProductDTO {
-    return this.appService.createProducto(product);
-  }
-
-  @Get("/products")
-  findAll(): ProductDTO[] {
-    return this.appService.findAll();
-  }
-
-  @Get("/products/:id")
-  findbyid(@Param('id') id: string): ProductDTO { 
-    return this.appService.findbyid(id);
-  }
-
-  @Put("/products/:id")
-  update(
-    @Param('id') id: string, 
-    @Body() updatedProductDto: Partial<ProductDTO> 
-  ): ProductDTO { 
-    return this.appService.update(id, updatedProductDto);
-  }
-
-  @Delete("/products/:id")
-  deleteById(@Param('id') id: string): ProductDTO { 
-    return this.appService.deleteById(id);
-  }
-
-  @Post("/area-triangulo")
-  areaTriangulo(@Body() data:any): any { 
-    return this.appService.areaTriangulo(data);
-  }
-
 }
