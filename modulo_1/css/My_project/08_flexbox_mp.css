@@ -1,0 +1,43 @@
+.header-vete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #264653;
+    color: white;
+    height: 60px;
+}
+
+.animales-grid {
+    display: flex;
+    margin: 20px 0;
+}
+
+.ficha {
+    display: flex;
+    flex-direction: column;
+    background-color: #2a9d8f;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.nav-clinica {
+    display: flex;
+    flex-direction: row;
+    background-color: #e9c46a;
+    padding: 10px;
+}
+
+.nav-clinica a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.cont-justify {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f4a261;
+    padding: 20px;
+}

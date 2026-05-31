@@ -1,0 +1,69 @@
+/* Estilo para los selectores de la vete */
+
+h3 {
+    color: seagreen;
+    font-size: 5ram; /* puse ram en vez de rem pa probar */
+}
+
+.texto_importante {
+    color: firebrick;
+    font-size: 2ram;
+}
+
+.ficha_paciente {
+    border: 3px dashed steelblue;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: lightcyan;
+    border-radius: 10px;
+}
+
+.nombre_animal {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.costo_consulta {
+    font-weight: bold;
+    color: darkgreen;
+}
+
+#id_emergencias {
+    color: red;
+    text-decoration: underline;
+}
+
+* {
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.lista_servicios > li {
+    color: darkblue;
+    list-style: square;
+}
+
+.menu_vete a {
+    color: darkslategrey;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+h4, h5, h6 {
+    color: cadetblue;
+}
+
+button.btn-vete {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid green;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+button.btn-alerta {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+}

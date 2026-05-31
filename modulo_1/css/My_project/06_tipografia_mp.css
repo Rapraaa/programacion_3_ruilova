@@ -1,0 +1,30 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.precio-hoy {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: darkgreen;
+}
+
+.titulo-vete {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+
+.emergencia {
+  font-family: 'Roboto', sans-serif;
+  color: red;
+  font-weight: 800;
+}
+
+.seccion-noticias { font-weight: 700; }
+.detalle { font-weight: 400; }
+.legal { font-weight: 300; font-size: 0.8rem; }
+
+.precio-viejo {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #888;
+}
