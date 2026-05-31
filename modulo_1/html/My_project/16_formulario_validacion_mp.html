@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Validaciones</title>
+    </head>
+    <body>
+        <h1>Validacion de Datos</h1>
+
+        <form action="/validar" method="post">
+            <fieldset>
+                <legend>Obligatorio</legend>
+                <label for="n">Nombre Mascota</label>
+                <input type="text" id="n" name="n" required />
+            </fieldset>
+
+            <fieldset>
+                <legend>Chip (5 numeros)</legend>
+                <label for="c">Codigo</label>
+                <input type="text" id="c" name="c" pattern="[0-9]{5}" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Edad (0-20)</legend>
+                <label for="e">Años</label>
+                <input type="number" id="e" name="e" min="0" max="20" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Info fija</legend>
+                <label for="p">Pais</label>
+                <input type="text" id="p" name="p" value="Ecuador" readonly />
+            </fieldset>
+
+            <br>
+            <button type="submit">Guardar</button>
+        </form>
+    </body>
+</html>
