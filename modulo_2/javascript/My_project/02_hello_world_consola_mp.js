@@ -1,1 +1,1 @@
-console.log('Iniciando consola vete con nodejs...');
+console.log("Hola, bienvenido al sistema de consultas veterinarias..");

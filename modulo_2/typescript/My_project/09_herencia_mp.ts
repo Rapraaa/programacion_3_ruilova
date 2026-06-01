@@ -1,11 +1,20 @@
 // Herencia Animal
 class Mascota {
-  constructor(protected nombre: string) {}
-  comer() { console.log(`${this.nombre} comiendo...`); }
+  protected nombre: string;
+
+  constructor(nombre: string) {
+    this.nombre = nombre;
+  }
+
+  comer() { 
+    console.log(`${this.nombre} comiendo...`); 
+  }
 }
 
 class Perro extends Mascota {
-  ladrar() { console.log("Guau!"); }
+  ladrar() { 
+    console.log("Guau!"); 
+  }
 }
 
 const p = new Perro("Firulais");
