@@ -1,85 +1,82 @@
-
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { ProductDTO } from './product_dto';
+import { Injectable } from '@nestjs/common';
+import { ProductDto } from './product.dto';
 
 @Injectable()
 export class AppService {
-  private products: ProductDTO[] = [
+  private products: ProductDto[]=[
     {
       id: 1,
-      name: "Laptop",
-      price: 999.99,
+      name: 'Laptop HP',
+      price: 850,
       stock: 15
     },
     {
       id: 2,
-      name: "Laptop DELL",
-      price: 999.99,
-      stock: 15
-    }
-  ];
+      name: 'Laptop DELL',
+      price: 950,
+      stock: 20
+    },
+
+  ]
 
   getHealth(): any {
     return {
-      status: 'online',
-      service: 'blog service api',
-      version: '0.0.1',
-      date: new Date()
+      "status": "Online",
+      "service": "Blog service api",
+      "version": "0.0.1",
+      "date": new Date()
     };
   }
 
-  createProducto(product: ProductDTO): ProductDTO {
-    const newProduct: ProductDTO = {
-      ...product,
-      id: Math.floor(Math.random() * 1000) + 1,
-    };
+  CreteProducto(product: ProductDto): ProductDto {
+    const newProduct: ProductDto={
+      id: Math.random(),
+      ...product
+    }
     this.products.push(newProduct);
-    return newProduct;
+    return {
+      "id": product.id,
+      "name": product.name,
+      "price": product.price,
+      "stock":product.stock
+    };
   }
 
-  findAll(): ProductDTO[] {
-    return this.products;
+  findAll(): ProductDto[]{
+    return this.products
   }
 
-  findbyid(id: string): ProductDTO {
-    const product = this.products.find(p => p.id === Number(id));
-    if (!product) {
-      throw new NotFoundException(`Producto con ID ${id} no encontrado`);
+  findById(id: string): ProductDto{
+    return this.products!
+      .find(product=>product.id===Number(id))!;
+  }
+
+  update(id: string, updatedProductDto: ProductDto): any{
+    const product : ProductDto = this.products!
+      .find(product=>product.id===Number(id))!;
+    if (!product){
+      return;
     }
-    return product;
+    Object.assign(product,updatedProductDto)
   }
 
-  update(id: string, updatedProductDto: Partial<ProductDTO>): ProductDTO {
-    const product = this.products.find(p => p.id === Number(id));
-
-    if (!product) {
-      throw new NotFoundException(`Producto con ID ${id} no encontrado`);
+  deleteById(id: string): any{
+    const index= this.products!
+      .findIndex(product=>product.id===Number(id))!;
+    if (index ===-1){
+      return;
     }
-
-    Object.assign(product, updatedProductDto);
-    return product;
-  }
-
-  deleteById(id: string): ProductDTO {
-    const index = this.products.findIndex(p => p.id === Number(id));
-
-    if (index === -1) {
-      throw new NotFoundException(`Producto con ID ${id} no existe`);
-    }
-
-    const deletedProduct = this.products[index];
-
-    this.products.splice(index, 1);
-
-    return deletedProduct;
+    const deletedProduct=this.products[index]
+    this.products.splice(index,1);
+    return deletedProduct
   }
 
   areaTriangulo(data: any): any {
-    const area = (data.base * data.altura) / 2;
+    const area = (data.base * data.altura)/2;
     return {
-      "base": data.base,
-      "altura": data.altura,
-      "areaTriangulo": area,
+        "base": data.base,
+        "altura": data.altura,
+        "areaTriangulo": area,
     };
   }
 }
