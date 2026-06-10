@@ -27,3 +27,17 @@ document.getElementById("btn6").addEventListener("click", () => {
   const titulo2 = document.getElementById("h2sito");
   titulo2.textContent = "Hoy es Lunes";
 });
+
+document.getElementById("campos").addEventListener("input", () => {
+  console.log("valor del campo: ", document.getElementById("campos").value);
+});
+
+document
+  .getElementById("campo_actualizar_parrafo")
+  .addEventListener("input", () => {
+    const valorCampo = document.getElementById(
+      "campo_actualizar_parrafo",
+    ).value;
+    document.getElementById("parrafo").textContent =
+      `Valor actualizado: ${valorCampo}`;
+  });
