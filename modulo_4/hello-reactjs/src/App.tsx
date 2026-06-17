@@ -1,17 +1,12 @@
-import ProductCard from "./components/ProductCard";
+import MascotasCatalogList, { type Mascota } from "./components/MascotasList";
+//import ProductCard from "./components/ProductCard";
 
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  outOfStock?: boolean;
-}
-
-const catalog: Product[] = [
-  { id: 1, name: "Teclado mecánico", price: 89.99 },
-  { id: 2, name: 'Monitor 27"', price: 349.99 },
-  { id: 3, name: "Mouse inalámbrico", price: 29.99, outOfStock: true },
-  { id: 4, name: "Webcam HD", price: 59.99 },
+const catalog: Mascota[] = [
+  { id: 1, name: "jaime", price: 89.99, tipo: "gato" },
+  { id: 2, name: "pepe", price: 349.99, tipo: "perro" },
+  { id: 3, name: "honsalo", price: 29.99, tipo: "perro" },
+  { id: 4, name: "manchas", price: 0.99, edad: 5, tipo: "gato" },
+  { id: 5, name: "skibidi dop dop", price: 1000, edad: 2, tipo: "perro" },
 ];
 
 export default function App() {
@@ -19,13 +14,7 @@ export default function App() {
     <main
       style={{ maxWidth: 540, margin: "40px auto", fontFamily: "sans-serif" }}
     >
-      <ProductCard
-        title="Bienvenido a la tienda"
-        description="Encuentra los mejores accesorios para tu escritorio"
-        price={59}
-      />
-
-      <ProductCard title="Oferta del día" />
+      <MascotasCatalogList mascotas={catalog} title="Venta mascotas" />
     </main>
   );
 }

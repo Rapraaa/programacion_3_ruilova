@@ -2,6 +2,7 @@ interface ProductCardProps {
   title: string;
   description?: string;
   highlighted?: boolean;
+  price?: number;
 }
 
 export default function ProductCard({
