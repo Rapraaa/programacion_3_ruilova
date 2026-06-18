@@ -5,6 +5,8 @@ interface ColoredBoxProps {
   width?: number;
   height?: number;
   label?: string;
+  borderRadius?: number;
+  onClick?: () => void;
 }
 
 export default function ColoredBox({
@@ -12,6 +14,8 @@ export default function ColoredBox({
   width = 80,
   height = 80,
   label,
+  borderRadius = 8,
+  onClick,
 }: ColoredBoxProps) {
   return (
     <div
@@ -20,6 +24,7 @@ export default function ColoredBox({
         flexDirection: "column",
         alignItems: "center",
         gap: 6,
+        borderRadius,
       }}
     >
       <div
@@ -27,9 +32,10 @@ export default function ColoredBox({
           width,
           height,
           backgroundColor: color,
-          borderRadius: 8,
+          borderRadius,
           border: "1px solid rgba(0,0,0,0.1)",
         }}
+        onClick={onClick}
       />
       {label && <span style={{ fontSize: 12, color: "#666" }}>{label}</span>}
     </div>

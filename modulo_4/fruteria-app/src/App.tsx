@@ -13,6 +13,7 @@ import SimpleInfoTable from "./components/SimpleInfoTable";
 import ProductCard from "./components/ProductCard";
 import ProductCatalogList from "./components/ProductCatalogList";
 import UserProfileCard from "./components/UserProfileCard";
+import VehiculosTable from "./components/Carros";
 
 // ┌──────────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.           │
@@ -30,21 +31,24 @@ import UserProfileCard from "./components/UserProfileCard";
 // │  12  ProductCatalogList  — lista con renderizado condicional de items    │
 // │  13  UserProfileCard     — ejercicio: props complejas + rol              │
 // └──────────────────────────────────────────────────────────────────────────┘
-const PASO = 2;
-/*
+const PASO = 11;
 const fruits = [
-  { name: 'Manzana', emoji: '🍎', calories: 52 },
-  { name: 'Banana',  emoji: '🍌', calories: 89 },
-  { name: 'Naranja', emoji: '🍊', calories: 47 },
-]
+  { name: "Manzana", emoji: "🍎", calories: 52 },
+  { name: "Banana", emoji: "🍌", calories: 89 },
+  { name: "Naranja", emoji: "🍊", calories: 47 },
+  { name: "Kiwi", emoji: "🥝", calories: 61, inSeason: true },
+  { name: "Pera", emoji: "🍇", calories: 42, inSeason: true },
+  { name: "Piñota", emoji: "🍍", calories: 50 },
+];
+
+//const fruits = [];
 
 const catalog = [
-  { id: 1, name: 'Teclado mecánico',  price: 89.99 },
-  { id: 2, name: 'Monitor 27 pulgadas', price: 349.99 },
-  { id: 3, name: 'Mouse inalámbrico', price: 29.99, outOfStock: true },
-  { id: 4, name: 'Webcam HD',         price: 59.99 },
-]
-*/
+  { id: 1, name: "Teclado mecánico", price: 89.99 },
+  { id: 2, name: "Monitor 27 pulgadas", price: 349.99 },
+  { id: 3, name: "Mouse inalámbrico", price: 29.99, outOfStock: true },
+  { id: 4, name: "Webcam HD", price: 59.99 },
+];
 export default function App() {
   const content =
     PASO === 1 ? (
@@ -55,15 +59,19 @@ export default function App() {
       <CurrentDateDisplay />
     ) : PASO === 4 ? (
       <div style={{ display: "flex", gap: 12 }}>
-        <ColoredBox color="#0070f3" label="Primary" />
-        <ColoredBox color="#22c55e" label="Success" />
-        <ColoredBox color="#e00" label="Danger" />
+        <ColoredBox color="#f59e0b" label="Primary" width={120} height={40} />
+        <ColoredBox
+          color="#8b5cf6"
+          label="bACANO"
+          onClick={() => alert("hola")}
+        />
+        <ColoredBox color="#ec4899" borderRadius={50} />
       </div>
     ) : PASO === 5 ? (
       <ConditionalGreeting
         isLoggedIn={true}
-        userName="Ana"
-        timeOfDay="afternoon"
+        userName="Carlos"
+        timeOfDay="evening"
       />
     ) : PASO === 6 ? (
       <FruitList fruits={fruits} title="Frutas favoritas" />
@@ -84,8 +92,8 @@ export default function App() {
         fullName="Ana García"
         role="Senior Developer"
         department="Ingeniería"
-        status="active"
-        joinedYear={2019}
+        status="error"
+        joinedYear={new Date().getFullYear()}
       />
     ) : PASO === 10 ? (
       <SimpleInfoTable
@@ -96,15 +104,30 @@ export default function App() {
           { label: "Total", value: "$94.99", highlight: true },
         ]}
       />
-    ) : PASO === 11 ? (
+    ) : PASO == 11 ? (
+      <VehiculosTable
+        title="Vehículos disponibles"
+        rows={[
+          { marca: "Toyora", año: 2006, modelo: "bacano", value: "$891.99" },
+          { marca: "ferati", año: 2024, modelo: "fium", value: "522.00" },
+          {
+            marca: "misang",
+            año: 2000,
+            modelo: "rapido",
+            value: "$942.99",
+            highlight: true,
+          },
+        ]}
+      />
+    ) : PASO === 12 ? (
       <ProductCard
         title="Teclado inalámbrico"
         description="Bluetooth 5.0, retroiluminado"
         highlighted
       />
-    ) : PASO === 12 ? (
-      <ProductCatalogList products={catalog} title="Productos disponibles" />
     ) : PASO === 13 ? (
+      <ProductCatalogList products={catalog} title="Productos disponibles" />
+    ) : PASO === 14 ? (
       <UserProfileCard
         fullName="Ana García"
         email="ana@ejemplo.com"

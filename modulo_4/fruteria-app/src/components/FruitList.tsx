@@ -4,6 +4,7 @@ interface Fruit {
   name: string;
   emoji: string;
   calories: number;
+  inSeason?: boolean;
 }
 
 interface FruitListProps {
@@ -18,12 +19,12 @@ export default function FruitList({
   if (fruits.length === 0) {
     return <p style={{ color: "#999" }}>No hay frutas en la lista.</p>;
   }
-
+  const sorted = [...fruits].sort((a, b) => b.calories - a.calories);
   return (
     <div>
       <h3 style={{ marginBottom: 8 }}>{title}</h3>
       <ul style={{ listStyle: "none", padding: 0 }}>
-        {fruits.map((fruit) => (
+        {sorted.map((fruit) => (
           <li
             key={fruit.name}
             style={{
@@ -34,7 +35,9 @@ export default function FruitList({
             }}
           >
             <span>
-              {fruit.emoji} {fruit.name}
+              {fruit.inSeason && "☀️"}
+              {fruit.emoji}
+              {fruit.name}
             </span>
             <span style={{ color: "#888", fontSize: 13 }}>
               {fruit.calories} kcal
