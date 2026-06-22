@@ -14,6 +14,7 @@ import ProductCard from "./components/ProductCard";
 import ProductCatalogList from "./components/ProductCatalogList";
 import UserProfileCard from "./components/UserProfileCard";
 import VehiculosTable from "./components/Carros";
+import DigitalCounter from "./components/DigitalCounter";
 
 // ┌──────────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.           │
@@ -31,7 +32,7 @@ import VehiculosTable from "./components/Carros";
 // │  12  ProductCatalogList  — lista con renderizado condicional de items    │
 // │  13  UserProfileCard     — ejercicio: props complejas + rol              │
 // └──────────────────────────────────────────────────────────────────────────┘
-const PASO = 11;
+const PASO = 1;
 const fruits = [
   { name: "Manzana", emoji: "🍎", calories: 52 },
   { name: "Banana", emoji: "🍌", calories: 89 },
@@ -52,7 +53,7 @@ const catalog = [
 export default function App() {
   const content =
     PASO === 1 ? (
-      <WelcomeBanner subtitle="Programadores estrella" />
+      <DigitalCounter />
     ) : PASO === 2 ? (
       <UserGreeting name="Carlos López Ruiz" occupation="Devops" />
     ) : PASO === 3 ? (
