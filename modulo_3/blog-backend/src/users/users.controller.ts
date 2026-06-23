@@ -1,11 +1,24 @@
-import { Controller, Get, Post, Put, Delete, Body, Param, Query, NotFoundException, UseInterceptors, BadRequestException, UploadedFile } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Body,
+  Param,
+  Query,
+  NotFoundException,
+  UseInterceptors,
+  BadRequestException,
+  UploadedFile,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { QueryDto } from 'src/common/dto/query.dto'; // Importamos tu QueryDto
+import { QueryDto } from '../common/dto/query.dto'; // Importamos tu QueryDto
 import { Pagination } from 'nestjs-typeorm-paginate';
 import { User } from './user.entity';
-import { SuccessResponseDto } from 'src/common/dto/response.dto';
+import { SuccessResponseDto } from '../common/dto/response.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 
@@ -19,7 +32,7 @@ export class UsersController {
     return new SuccessResponseDto('User created successfully', User);
   }
 
-   @Get()
+  @Get()
   async findAll(@Query() query: QueryDto) {
     const result = await this.usersService.findAll(query);
     return new SuccessResponseDto('Users retrieved successfully', result);
@@ -46,22 +59,27 @@ export class UsersController {
     return new SuccessResponseDto('User deleted successfully', user);
   }
 
-    @Put(':id/profile')
-  @UseInterceptors(FileInterceptor('profile', {
-    storage: diskStorage({
-      destination: './public/profile',
-      filename: (req, file, cb) => {
-        const uniqueName = `${Date.now()}-${file.originalname}`;
-        cb(null, uniqueName);
-      }
+  @Put(':id/profile')
+  @UseInterceptors(
+    FileInterceptor('profile', {
+      storage: diskStorage({
+        destination: './public/profile',
+        filename: (req, file, cb) => {
+          const uniqueName = `${Date.now()}-${file.originalname}`;
+          cb(null, uniqueName);
+        },
+      }),
+      fileFilter: (req, file, cb) => {
+        if (!file.mimetype.match(/\/(jpg|jpeg|png)$/)) {
+          return cb(
+            new BadRequestException('Only JPG or PNG files are allowed'),
+            false,
+          );
+        }
+        cb(null, true);
+      },
     }),
-    fileFilter: (req, file, cb) => {
-      if (!file.mimetype.match(/\/(jpg|jpeg|png)$/)) {
-        return cb(new BadRequestException('Only JPG or PNG files are allowed'), false);
-      }
-      cb(null, true);
-    }
-  }))
+  )
   async uploadProfile(
     @Param('id') id: string,
     @UploadedFile() file: Express.Multer.File,

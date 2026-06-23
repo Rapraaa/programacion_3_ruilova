@@ -1,14 +1,22 @@
 import {
-  Controller, Get, Post, Put, Delete,
-  Param, Body, Query, NotFoundException, InternalServerErrorException
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Param,
+  Body,
+  Query,
+  NotFoundException,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { Pagination } from 'nestjs-typeorm-paginate';
 import { Category } from './category.entity';
-import { SuccessResponseDto } from 'src/common/dto/response.dto';
-import { QueryDto } from 'src/common/dto/query.dto';
+import { SuccessResponseDto } from '../common/dto/response.dto';
+import { QueryDto } from '../common/dto/query.dto';
 
 @Controller('categories')
 export class CategoriesController {
@@ -17,7 +25,8 @@ export class CategoriesController {
   @Post()
   async create(@Body() dto: CreateCategoryDto) {
     const category = await this.categoriesService.create(dto);
-    if (!category) throw new InternalServerErrorException('Failed to create category');
+    if (!category)
+      throw new InternalServerErrorException('Failed to create category');
     return new SuccessResponseDto('Category created successfully', category);
   }
 
@@ -31,7 +40,8 @@ export class CategoriesController {
 
     const result = await this.categoriesService.findAll(query);
 
-    if (!result) throw new InternalServerErrorException('Could not retrieve categories');
+    if (!result)
+      throw new InternalServerErrorException('Could not retrieve categories');
 
     return new SuccessResponseDto('Categories retrieved successfully', result);
   }
