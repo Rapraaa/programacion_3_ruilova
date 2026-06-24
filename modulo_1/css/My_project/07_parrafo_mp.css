@@ -1,0 +1,68 @@
+.texto-vete {
+    line-height: 1.5;
+}
+
+.titulo-servicio {
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+.descripcion-vete {
+    line-height: 2.0;
+}
+
+.logo-vete {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.info-justificada {
+    text-align: justify;
+}
+
+.banner-centro {
+    text-align: center;
+    background-color: #2a9d8f;
+    color: white;
+    padding: 10px;
+}
+
+.precio-tachado {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.precio-nuevo {
+    font-weight: bold;
+    color: green;
+}
+
+.vete-mayuscula {
+    text-transform: uppercase;
+}
+
+.vete-capital {
+    text-transform: capitalize;
+}
+
+.texto-largo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    border: 1px solid black;
+}
+
+.error { color: red; font-weight: bold; }
+.ok { color: green; font-weight: bold; }
+
+:root {
+    --primario: #264653;
+    --secundario: #2a9d8f;
+}
+
+h1 {
+    color: var(--primario);
+}

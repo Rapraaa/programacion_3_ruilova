@@ -1,0 +1,91 @@
+.vax-card {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.vax-card2 {
+  font-size: 1.5em; /* 1.5 x 16 = 24px */
+  padding: 1em;
+}
+
+:root {
+  --vete-main: #2a9d8f;
+}
+
+.header-vete {
+  background: #264653;
+  color: white;
+  padding: 1.5rem;
+}
+
+#menu-check {
+  display: none;
+}
+
+.btn-abrir {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.menu-vete {
+  display: none;
+  background: #e9c46a;
+  padding: 1rem;
+}
+
+#menu-check:checked ~ .menu-vete {
+  display: block;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-vete-claro {
+  background-color: color-mix(in srgb, var(--vete-main) 30%, white);
+  color: var(--vete-main);
+}
+
+.btn-vete-oscuro {
+  background-color: color-mix(in srgb, var(--vete-main) 70%, black);
+  color: white;
+}
+
+.mezcla {
+  background-color: color-mix(in srgb, #2a9d8f 50%, #f4a261 50%);
+  padding: 20px;
+  color: white;
+}
+
+.foto-perro {
+  background-image: url("https://via.placeholder.com/500x250");
+  background-size: cover;
+  height: 250px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.foto-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: color-mix(in srgb, black 60%, transparent);
+}
+
+.banner-full {
+  height: 100vh;
+  width: 100vw;
+  background-color: #eee;
+}
+
+.info-minima {
+  min-height: 40vh;
+  background-color: #ddd;
+}

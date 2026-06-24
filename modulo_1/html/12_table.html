@@ -1,0 +1,223 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width-device-width, initial-scale=1.0" />
+    <title>Enlaces</title>
+</head>
+
+<body>
+    <h1>Table</h1>
+    <table>
+        <tr>
+            <!-- estas de aca son las lineas -->
+            <th>Nombre</th>
+            <!-- estas de aca son las celdas->
+            <th>Edad</th>
+            <th>Ciudad</th>
+        </tr>
+        <tr>
+            <th>Ana Garcia</th>
+            <th>28</th>
+            <th>Quito</th>
+        </tr>
+        <tr><!-- LINEAS -->
+            <th>javier city</th>
+            <th>29</th>
+            <th>cito</th>
+        </tr>
+        <tr>
+            <!-- LINEAS -->
+            <th>Pedro Herrera</th>
+            <th>45</th>
+            <th>Ambato</th>
+        </tr>
+    </table>
+
+    <h1>Tabla por secciones</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monitor 4k</td>
+                <td>12$</td>
+                <td>300 pulgadotas</td>
+                <td>Electronico</td>
+            </tr>
+            <tr>
+                <td>Teclado mecanico</td>
+                <td>79$</td>
+                <td>5 pesitos</td>
+                <td>Perifericos</td>
+            </tr>
+            <tr>
+                <td>Mopuse Inalambrico</td>
+                <td>4125$</td>
+                <td>15</td>
+                <td>Perifericos</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>2500$</td>
+                <td>3222</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h1>Tabla scoop clasificaciones</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Materia</th>
+                <th scope="col">1er corte</th>
+                <th scope="col">2do corte</th>
+                <th scope="col">Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Prigramacion I</td>
+                <td>9</td>
+                <td>10</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td scope="row">base de datos</td>
+                <td>10</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td scope="row">Calidad de software</td>
+                <td>7</td>
+                <td>10</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Tabla combinacion-celdas clasificaciones</h1>
+
+    <table border="5">
+        <thead>
+            <tr>
+                <th rowspan="2">Equipo</th>
+                <th colspan="3">Resultados</th>
+                <th rowspan="2">Puntos</th>
+            </tr>
+            <tr>
+                <th>V</th>
+                <th>E</th>
+                <th>D</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Real Madrid</td>
+                <td>22</td>
+                <td>5</td>
+                <td>3</td>
+                <td>71</td>
+            </tr>
+            <tr>
+                <td scope="row">Barcelona</td>
+                <td>29</td>
+                <td>6</td>
+                <td>5</td>
+                <td>66</td>
+            </tr>
+            <tr>
+                <td scope="row">Atletico</td>
+                <td>18</td>
+                <td>7</td>
+                <td>5</td>
+                <td>61</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Titulo y resumen clasificaciones</h1>
+
+    <table border="2">
+        <caption>
+            Notas primer parcial
+        </caption>
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Matematicas</th>
+                <th>Lenguaje</th>
+                <th>Ciencias</th>
+                <th>Promedio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Luis Ruiz</td>
+                <td>9</td>
+                <td>8</td>
+                <td>9</td>
+                <td>7.0</td>
+            </tr>
+            <tr>
+                <td>Jorge Lazaro</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Andreina Medina</td>
+                <td>10</td>
+                <td>9</td>
+                <td>10</td>
+                <td>9.7</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!--resumen-->
+            <tr>
+                <th>Media Clase</th>
+                <td>8.3</td>
+                <td>8.0</td>
+                <td>9.8</td>
+                <td>8.5</td>
+            </tr>
+        </tfoot>
+    </table>
+    <h1>Colgroup- clasificaciones</h1>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <col style="background-color: antiquewhite" />
+                <col style="background-color: aquamarine" />
+                <col style="background-color: bisque" />
+                <col style="background-color: yellow" />
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jhony La cruz</td>
+                <td>Martes</td>
+                <td>Miercoles</td>
+                <td>Jueves</td>
+            </tr>
+            <tr>
+                <td>Programacion</td>
+                <td>7:00 am</td>
+                <td>8:00 am</td>
+                <td>9:00 am</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

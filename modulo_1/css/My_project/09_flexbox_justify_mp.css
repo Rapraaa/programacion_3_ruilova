@@ -1,0 +1,20 @@
+.vete-cont {
+    display: flex;
+    background: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.paciente {
+    background: #e76f51;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 50%; /* forma circular */
+}
+
+.inicio { justify-content: flex-start; }
+.centro { justify-content: center; }
+.between { justify-content: space-between; }
+.evenly { justify-content: space-evenly; }

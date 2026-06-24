@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Audios</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="" />
+    </head>
+    <body>
+        <!--mp3 -->
+        <audio
+            src="audios/music-sample-320kbps.mp3"
+            controls
+            type="audio/mpeg"
+        ></audio>
+        <!--ogg -->
+        <audio
+            src="audios/music-sample-320kbps.ogg"
+            controls
+            type="audio/ogg"
+        ></audio>
+        <br />
+        <!--wav -->
+        <h3>a este le metemos autoplay y loop</h3>
+        <audio
+            src="audios/music-sample-48000hz-24bit.wav"
+            autoplay
+            controls
+            loop
+            type="audio/wav"
+        ></audio>
+        <br />
+        <h1>Ahora como lista</h1>
+        <audio controls preload="metadata">
+            <!-- sirve com ofallbacks, si no soporta mpe usa el ogg y asi -->
+            <source src="audios/music-sample-320kbps.mp3" type="audio/mpeg" />
+            <source src="audios/music-sample-320kbps.ogg" type="audio/ogg" />
+            <source
+                src="audios/music-sample-48000hz-24bit.wav"
+                type="audio/wav"
+            />
+        </audio>
+    </body>
+</html>

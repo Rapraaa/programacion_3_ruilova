@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    margin: 30px;
+}
+
+.bar-vete {
+    display: flex;
+    gap: 30px;
+    background: #2a9d8f;
+    padding: 15px;
+}
+
+.bar-vete a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.chips {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.grilla-pacientes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #eee;
+    padding: 20px;
+    height: auto; /* deje que crezca solo */
+}
+
+.p {
+    background: #e76f51;
+    color: white;
+    padding: 25px;
+    width: 100px;
+    text-align: center;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3ro Semestre - Vete</title>
+    
+    <link rel="stylesheet" href="04_display_mp.css">
+</head>
+<body>
+    <h1 style="color: steelblue;">DISPLAY VETERINARIA</h1>
+    <div class="aviso-vax">💉 Campaña Vacunación: 10$ todo mayo</div>
+
+    <div class="tag-urgente">URGENTE</div>
+
+    <button class="btn-turno">Agendar Cita</button>
+
+    <button onclick="verInfo()">Ver Info Clínica</button>
+    <div id="info-vete" class="detalle-vete">
+        <ul>
+            <li><a href="#">Direccion: Quito Norte</a></li>
+            <li><a href="#">Telefono: 099999999</a></li>
+            <li><a href="#">Doctor: Rahi</a></li>
+        </ul>
+    </div>
+    <script>
+        function verInfo(){
+            const info = document.getElementById('info-vete')
+            info.classList.toggle('visible')
+        }
+    </script>
+</body>
+</html>

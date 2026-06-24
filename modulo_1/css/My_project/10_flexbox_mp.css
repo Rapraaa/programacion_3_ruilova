@@ -1,0 +1,22 @@
+.cont-vete {
+    display: flex;
+    height: 200px;
+    background: #e9edc9;
+    border: 2px solid #ccd5ae;
+    margin-bottom: 30px;
+}
+
+.celda {
+    background: #d4a373;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+}
+
+.centro { align-items: center; }
+.fin { align-items: flex-end; }
+
+/* diferentes tamaños para ver el alineado */
+.celda:nth-child(1) { height: 40px; }
+.celda:nth-child(2) { height: 100px; }
+.celda:nth-child(3) { height: 60px; }

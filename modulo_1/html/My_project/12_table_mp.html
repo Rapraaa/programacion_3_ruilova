@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Tablas Veterinarias</title>
+    </head>
+    <body>
+        <h1>Tabla SOAP</h1>
+        <table border="1">
+            <caption>Metodología de consulta</caption>
+            <tr> 
+                <th>Letra</th>
+                <th>Significado</th>
+                <th>Explicación</th>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td>Subjective</td>
+                <td>Lo que dice el dueño del animal.</td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>Objective</td>
+                <td>Lo que el veterinario ve y mide (peso, temp).</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>Assessment</td>
+                <td>El diagnostico del problema.</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>Plan</td>
+                <td>El tratamiento a seguir.</td>
+            </tr>
+        </table>
+
+        <h1>Inventario de Insumos</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jeringuillas 5ml</td>
+                    <td>0.50$</td>
+                    <td>100 unidades</td>
+                    <td>Desechables</td>
+                </tr>
+                <tr>
+                    <td>Alcohol antiséptico</td>
+                    <td>3.50$</td>
+                    <td>10 galones</td>
+                    <td>Limpieza</td>
+                </tr>
+                <tr>
+                    <td>Vendas elásticas</td>
+                    <td>2.00$</td>
+                    <td>50</td>
+                    <td>Curación</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total Insumos</td>
+                    <td>6.00$</td>
+                    <td>160</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h1>Constantes Fisiológicas por Especie</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th scope="col">Especie</th>
+                    <th scope="col">Temp (°C)</th>
+                    <th scope="col">FC (bpm)</th>
+                    <th scope="col">FR (rpm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Canino</td>
+                    <td>38.5</td>
+                    <td>80-120</td>
+                    <td>15-30</td>
+                </tr>
+                <tr>
+                    <td scope="row">Felino</td>
+                    <td>39.0</td>
+                    <td>140-200</td>
+                    <td>20-40</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Horarios de Turnos</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th rowspan="2">Doctor</th>
+                    <th colspan="2">Horarios</th>
+                    <th rowspan="2">Sede</th>
+                </tr>
+                <tr>
+                    <th>Mañana</th>
+                    <th>Tarde</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dr. Rahi Ruilova</td>
+                    <td>08:00 - 12:00</td>
+                    <td>14:00 - 18:00</td>
+                    <td>Quito</td>
+                </tr>
+                <tr>
+                    <td>Dra. Maria Lopez</td>
+                    <td>09:00 - 13:00</td>
+                    <td>--</td>
+                    <td>Valles</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Colgroup - Horario Semanal</h1>
+        <table border="2">
+            <colgroup>
+                <col style="background-color: #f0f0f0" />
+                <col style="background-color: #ffffff" />
+                <col style="background-color: #f0f0f0" />
+                <col style="background-color: #ffffff" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Lunes</th>
+                    <th>Miercoles</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Consultas</td>
+                    <td>08:00 am</td>
+                    <td>08:00 am</td>
+                    <td>08:00 am</td>
+                </tr>
+                <tr>
+                    <td>Cirugias</td>
+                    <td>14:00 pm</td>
+                    <td>14:00 pm</td>
+                    <td>--</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
