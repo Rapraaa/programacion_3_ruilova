@@ -4,7 +4,10 @@ import PrimeSieve from "./components/PrimeSieve";
 import FilteredCatalog from "./components/FilteredCatalog";
 import OrderMetrics from "./components/OrderMetrics";
 import MultiTagFilter from "./components/MultiTagFilter";
-
+import MemoizedList from "./components/MemoizedList";
+import SearchWithFetch from "./components/SearchWithFetch";
+import FilterTable from "./components/FilterTable";
+import PaginatedFetch from "./components/PaginatedFetch";
 // ┌──────────────────────────────────────────────────────────────────────┐
 // │  Cambia PASO y guarda (Ctrl+S) para navegar entre componentes.      │
 // │  1  PrimeSieve       — useMemo para cálculo costoso (criba primos)  │
@@ -24,6 +27,14 @@ export default function App() {
       <OrderMetrics />
     ) : PASO === 4 ? (
       <MultiTagFilter />
+    ) : PASO === 5 ? (
+      <MemoizedList />
+    ) : PASO === 6 ? (
+      <SearchWithFetch />
+    ) : PASO === 7 ? (
+      <FilterTable />
+    ) : PASO === 8 ? (
+      <PaginatedFetch />
     ) : (
       <p style={{ color: "#e00" }}>Paso {PASO}: crea el componente primero</p>
     );
