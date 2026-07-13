@@ -13,3 +13,12 @@ export async function createCategory(payload: CreateCategoryPayload) {
   const { data } = await http.post<ApiResponse<Category>>('/categories', payload)
   return data.data
 }
+
+export async function updateCategory(id: string, payload: CreateCategoryPayload) {
+  const { data } = await http.put<ApiResponse<Category>>(`/categories/${id}`, payload)
+  return data.data
+}
+
+export async function deleteCategory(id: string) {
+  await http.delete(`/categories/${id}`)
+}

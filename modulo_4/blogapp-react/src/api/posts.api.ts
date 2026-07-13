@@ -1,5 +1,5 @@
 // src/api/posts.api.ts
-import { http } from './http'
+import { http } from '@/api/http'
 import type { ApiResponse, Paginated } from '@/types/common.types'
 import type { Post, CreatePostPayload } from '@/types/post.types'
 import type { ListQuery } from '@/types/query.types'
