@@ -5,6 +5,8 @@ export interface User {
   email: string
   isActive: boolean
   profile?: string
+  googleId?: string | null
+  avatarUrl?: string | null
 }
 
 export interface CreateUserPayload {
