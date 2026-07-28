@@ -1,10 +1,18 @@
 import {
-  Controller, Get, Post, Put, Delete,
-  Param, Body, Query, NotFoundException, InternalServerErrorException,
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Param,
+  Body,
+  Query,
+  NotFoundException,
+  InternalServerErrorException,
 } from '@nestjs/common';
 import { CursosService } from './cursos.service';
 import { CreateCursoDto } from './dto/create-curso.dto';
-import { SuccessResponseDto } from 'src/common/dto/response.dto';
+import { SuccessResponseDto } from '../common/dto/response.dto';
 
 @Controller('cursos')
 export class CursosController {
@@ -13,7 +21,8 @@ export class CursosController {
   @Post()
   async create(@Body() dto: CreateCursoDto) {
     const curso = await this.cursosService.create(dto);
-    if (!curso) throw new InternalServerErrorException('Failed to create course');
+    if (!curso)
+      throw new InternalServerErrorException('Failed to create course');
     return new SuccessResponseDto('Course created successfully', curso);
   }
 
@@ -23,7 +32,8 @@ export class CursosController {
     @Query('limit') limit = 10,
   ): Promise<SuccessResponseDto<any>> {
     const result = await this.cursosService.findAll({ page, limit });
-    if (!result) throw new InternalServerErrorException('Could not retrieve courses');
+    if (!result)
+      throw new InternalServerErrorException('Could not retrieve courses');
     return new SuccessResponseDto('Courses retrieved successfully', result);
   }
 

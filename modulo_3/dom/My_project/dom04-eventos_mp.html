@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vete - Eventos</title>
+        <script src="dom04-eventos_mp.js" defer></script>
+        <style>
+            .boton {
+                background-color: teal;
+                padding: 0.5em 1em;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="titulo">Eventos en la veterinaria</h1>
+        <h2 id="aviso" onclick="alert('Recuerde traer el carnet de vacunas')">
+            Aviso para el dueño
+        </h2>
+        <button class="boton" id="btn" onclick="llamarPaciente()">
+            Llamar paciente
+        </button>
+        <br />
+        <button class="boton" id="btn2" onclick="agregarMascota()">
+            Agregar mascota
+        </button>
+        <ul id="lista-mascotas-1"></ul>
+
+        <button class="boton" id="btn3">Agregar mascota desde listener</button>
+        <ul id="lista-mascotas2"></ul>
+
+        <p id="diagnostico">El paciente tiene sintomas leves</p>
+        <button id="btn4" onclick="cambiarDiagnostico()">
+            Actualizar diagnostico
+        </button>
+
+        <h2 id="turno">Turno actual: 1</h2>
+        <button id="btn6">Siguiente turno</button>
+
+        <br />
+        <input type="text" placeholder="Nombre de la mascota" id="campos" />
+        <br />
+        <input id="campo_dueno" type="text" placeholder="Nombre del dueño" />
+        <p id="parrafo">Dueño: sin registrar</p>
+    </body>
+</html>
