@@ -1,0 +1,17 @@
+:root {
+    --bg: #ffffff;
+    --card: #f0fdfa;
+    --border: #99f6e4;
+    --text: #134e4a;
+    --accent: #0f766e;
+    --muted: #5f7f7c;
+}
+
+[data-theme="dark"] {
+    --bg: #042f2e;
+    --card: #134e4a;
+    --border: #115e59;
+    --text: #ccfbf1;
+    --accent: #2dd4bf;
+    --muted: #7dd3c8;
+}
